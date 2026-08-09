@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="C:/Users/shiva/.gemini/antigravity-ide/brain/ec215965-2509-43f3-980a-fdf588fe225e/quantumlogics_logo_1786266108436.png" alt="QuantumLogics Logo" width="400">
+  <img src="logo.png" alt="QuantumLogics Logo" width="400">
 </p>
 
 # QuantumLogics: Unified Quantum-Emulation OS (UQEOS)
