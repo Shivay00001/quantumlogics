@@ -1,44 +1,68 @@
-<p align="center">
-  <img src="logo.png" alt="QuantumLogics Logo" width="400">
-</p>
+# QuantumLogics
 
-# QuantumLogics: Unified Quantum-Emulation OS (UQEOS)
+![Banner](https://via.placeholder.com/800x200.png?text=QuantumLogics)
 
-**QuantumLogics** is a world-class, production-ready operating system that maps the **32 theoretical capabilities of future quantum computers** onto modern classical hardware (GPUs/CPUs) using advanced Quantum-Inspired algorithms and Tensor Networks.
+A unified quantum-emulation framework routing quantum capabilities to classical hardware via tensor networks.
 
-If you don't have access to a noisy, expensive, and fragile Quantum Processing Unit (QPU), QuantumLogics provides the mathematical abstraction to perform quantum-equivalent physics natively in PyTorch and Rust.
+## About
 
-## The 8 Quantum Pillars
+QuantumLogics is a modular classical-emulation stack spanning AI, chemistry, cryptography, finance, geometry, optimization, simulation, and systems. It pairs Python modules (`vq-logics-*`) with a Rust core (`vq-logics-engine`) to execute quantum-inspired algorithms on standard hardware.
 
-This OS handles computations via 8 hyper-optimized, standalone engines routed through a central FastAPI nervous system:
+**Modules:**
+- `vq-logics-ai` — Tensor neural networks (`tensor_nn.py`)
+- `vq-logics-api` — Service layer (`main.py`)
+- `vq-logics-chem` — Tensor VQE (`tensor_vqe.py`)
+- `vq-logics-crypto` — LWE cryptography (`lwe_crypto.py`)
+- `vq-logics-engine` — Rust core (`Cargo.toml`, `src/lib.rs`)
+- `vq-logics-fin` — QAE finance (`qae_finance.py`)
+- `vq-logics-geo` — Geo routing (`geo_router.py`)
+- `vq-logics-opt` — Benchmark & solvers (`benchmark.py`, `bsb_solver.py`, `maxcut.py`, `sb_solver.py`)
+- `vq-logics-sim` — DMRG simulation (`dmrg_sim.py`)
+- `vq-logics-sys` — Error correction (`error_correction.py`)
 
-1. ⚡ **`opt` (Optimization & Search)**: Ballistic Simulated Bifurcation (bSB) for logistics and Grover-style search.
-2. 🛡️ **`crypto` (Cybersecurity)**: Post-Quantum Trapdoor Tensors (Learning With Errors) for unbreakable encryption.
-3. 🧠 **`ai` (Intelligence)**: Matrix Product State (MPS) Neural Layers for highly compressed, tensor-native AI/GenAI.
-4. 🧬 **`chem` (Molecular)**: Tensor Variational Quantum Eigensolver (VQE) for drug discovery and ground-state extraction.
-5. ⚛️ **`sim` (Physics & Materials)**: Density Matrix Renormalization Group (DMRG) for simulating many-body physics.
-6. 📈 **`fin` (Finance & Math)**: Quantum-Inspired Amplitude Estimation for accelerating Monte Carlo risk sampling.
-7. 🌍 **`geo` (Earth & Space)**: QUBO meta-routers for planetary-scale climate and aerospace logistics.
-8. 🧩 **`sys` (Core & Error Correction)**: Mathematical emulation of Surface Codes and fault-tolerant logical qubits.
+## Installation
 
-## Getting Started
-
-### Using Docker (Recommended)
-You can launch the entire 8-pillar Quantum OS using Docker Compose:
 ```bash
+# Python dependencies
+pip install -r requirements.txt
+
+# Rust engine
+cd vq-logics-engine && cargo build --release
+
+# Docker (optional)
 docker-compose up --build
 ```
-The FastAPI router will be available at `http://localhost:8000`.
 
-### Python PyPI Install
+## Usage
+
+Run module-specific entry points directly or deploy the full stack via Docker Compose:
+
 ```bash
-pip install quantumlogics
+python vq-logics-ai/tensor_nn.py
+python vq-logics-opt/maxcut.py
 ```
 
-## Documentation & Endpoints
-The OS exposes a unified API. Example endpoints:
-- `POST /api/v1/opt/maxcut`
-- `POST /api/v1/ai/infer`
-- `POST /api/v1/crypto/generate_keys`
+See individual module directories for inputs, outputs, and benchmarks.
 
-*Engineered to push classical hardware beyond its limits.*
+## Repository Structure
+
+```
+.
+├── vq-logics-ai/        # Tensor NN
+├── vq-logics-api/       # API service
+├── vq-logics-chem/      # VQE chemistry
+├── vq-logics-crypto/    # LWE crypto
+├── vq-logics-engine/    # Rust core
+├── vq-logics-fin/       # Finance QAE
+├── vq-logics-geo/       # Geo router
+├── vq-logics-opt/       # Optimization solvers
+├── vq-logics-sim/       # DMRG simulation
+├── vq-logics-sys/       # Error correction
+├── docker-compose.yml
+├── Dockerfile
+└── requirements.txt
+```
+
+## License
+
+See repository root for licensing details.
