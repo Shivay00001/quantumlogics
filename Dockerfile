@@ -19,8 +19,11 @@ COPY vq-logics-geo/ ./vq-logics-geo/
 COPY vq-logics-sys/ ./vq-logics-sys/
 COPY vq-logics-api/ ./vq-logics-api/
 
+# Entrypoint shim (vq-logics-api/ is not a valid Python module name)
+COPY serve.py ./
+
 # Expose the FastAPI port
 EXPOSE 8000
 
 # Run the UQEOS central API
-CMD ["uvicorn", "vq-logics-api.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "serve:app", "--host", "0.0.0.0", "--port", "8000"]

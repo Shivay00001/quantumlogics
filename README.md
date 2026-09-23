@@ -42,6 +42,17 @@ python vq-logics-ai/tensor_nn.py
 python vq-logics-opt/maxcut.py
 ```
 
+Run the UQEOS API server (all 8 pillars over HTTP):
+
+```bash
+pip install -r requirements.txt
+uvicorn serve:app --host 0.0.0.0 --port 8000
+# API docs: http://localhost:8000/docs
+```
+
+Note: `vq-logics-api/` is not a valid Python module name (hyphens), so
+`serve.py` is the entrypoint shim that loads it for uvicorn.
+
 See individual module directories for inputs, outputs, and benchmarks.
 
 ## Repository Structure
