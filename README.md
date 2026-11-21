@@ -1,5 +1,7 @@
 # QuantumLogics
 
+Built by [VisionQuantech](https://visionquantech.com) — AI agents, apps & tools for small businesses.
+
 ![Banner](https://via.placeholder.com/800x200.png?text=QuantumLogics)
 
 A unified quantum-emulation framework routing quantum capabilities to classical hardware via tensor networks.
